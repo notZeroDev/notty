@@ -1,0 +1,23 @@
+{
+  "name": "notty",
+  "version": "1.0.0",
+  "description": "Note Taking App using nodejs",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notZeroDev/notty.git"
+  },
+  "author": "zeroDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notZeroDev/notty/issues"
+  },
+  "homepage": "https://github.com/notZeroDev/notty#readme",
+  "dependencies": {
+    "express.js": "^1.0.0"
+  }
+}
