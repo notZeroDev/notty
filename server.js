@@ -1,17 +1,9 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const router = require("./routes");
 app.engine("pug", require("pug").__express);
 app.set("views", "views");
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/note", (req, res, next) => {
-  res.render("note.pug", { title: "note" });
-});
-app.use("/note-edit", (req, res, next) => {
-  res.render("note-edit.pug", { title: "create note" });
-});
-app.use((req, res, next) => {
-  console.log("we are starting");
-  res.render("main.pug", { title: "Notty" });
-});
+app.use("/", router);
 app.listen(3000);
