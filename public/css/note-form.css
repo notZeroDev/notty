@@ -1,0 +1,27 @@
+form {
+  height: 60vh;
+  width: 50%;
+  background-color: blue;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+textarea {
+  resize: vertical;
+  min-height: 5rem;
+  max-height: 10rem;
+}
+button {
+  width: 100px;
+}
+.note-body {
+  height: 11rem;
+}

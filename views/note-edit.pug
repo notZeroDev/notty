@@ -1,0 +1,12 @@
+extends layouts/main-layout.pug
+block links
+  link(rel="stylesheet", href="css/note-form.css")
+block content
+  form(action="/submit")
+    .field 
+      label(for="title") Title
+      input#title(type="text", name="title")
+    .field(class="note-body")
+      label(for="noteBody") Note Body
+      textarea#body(name="noteBody")
+    button(type="submit" method="POST") Create

@@ -7,6 +7,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/note", (req, res, next) => {
   res.render("note.pug", { title: "note" });
 });
+app.use("/note-edit", (req, res, next) => {
+  res.render("note-edit.pug", { title: "create note" });
+});
 app.use((req, res, next) => {
   console.log("we are starting");
   res.render("main.pug", { title: "Notty" });
