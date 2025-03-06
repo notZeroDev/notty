@@ -19,6 +19,7 @@
   "homepage": "https://github.com/notZeroDev/notty#readme",
   "dependencies": {
     "express.js": "^1.0.0",
-    "pug": "^3.0.3"
+    "pug": "^3.0.3",
+    "sqlite3": "^5.1.7"
   }
 }
