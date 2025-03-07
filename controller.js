@@ -8,3 +8,7 @@ exports.getNoteDetails = (req, res, next) => {
 exports.getNoteEdit = (req, res, next) => {
   res.render("note-edit.pug");
 };
+exports.postForm = (req, res, next) => {
+  console.log(req.body);
+  res.redirect("/");
+};
