@@ -19,6 +19,9 @@ container.addEventListener("click", (e) => {
   const el = e.target.closest("span");
   if (!el) return;
   const note = el.closest(".note");
-  route(`/note-edit?edit=true&id=${note.dataset.id}`);
+  if (el.classList.contains("edit"))
+    return route(`/note-edit?edit=true&id=${note.dataset.id}`);
+  if (el.classList.contains("delete"))
+    return route(`/delete/:${note.dataset.id}`);
   console.log("we are here");
 });

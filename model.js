@@ -4,9 +4,7 @@ const db = new sqlite3.Database("notes.db");
 // db.exec(
 //   "CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, body TEXT NOT NULL);"
 // );
-// db.exec(
-//   "INSERT INTO notes(title, body) VALUES('test1', 'this is a good test');"
-// );
+// db.exec("DELETE FROM notes WHERE id = 1;");
 module.exports = class Note {
   static fetchAll(callback) {
     db.all("SELECT * FROM notes", function (err, data) {
@@ -34,8 +32,16 @@ module.exports = class Note {
   static update(note) {
     console.log("updated", note);
     db.exec(
-      `Update notes SET title = '${note.title}', body = '${note.body}' WHERE id = ${note.id};`
+      `UPDATE notes SET title = '${note.title}', body = '${note.body}' WHERE id = ${note.id};`
     );
     console.log(`${note.title} is Updated!`);
+  }
+  static Delete(id, callback) {
+    console.log(id);
+    db.exec(`DELETE FROM notes WHERE id = ${id};`, (err, data) => {
+      if (err) console.error(err);
+      else callback(data);
+    });
+    console.log(`${id} is Deleted!`);
   }
 };

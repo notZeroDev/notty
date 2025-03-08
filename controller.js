@@ -3,7 +3,6 @@ exports.getLandingPage = (req, res, next) => {
   let notes;
   Note.fetchAll((data) => {
     notes = data;
-    console.log(data);
     res.render("main.pug", { title: "Notty", notes });
   });
 };
@@ -12,9 +11,7 @@ exports.getNoteDetails = (req, res, next) => {
 };
 exports.getNoteEdit = (req, res, next) => {
   const edit = req.query?.edit == "true";
-  console.log("===============>", edit);
   Note.find(req.query.id, function (data) {
-    console.log(data);
     res.render("note-edit.pug", {
       title: `${edit ? "edit" : "create"} note`,
       edit,
@@ -22,9 +19,15 @@ exports.getNoteEdit = (req, res, next) => {
     });
   });
 };
+exports.getDelete = (req, res, next) => {
+  let { id } = req.params;
+  id = +id.slice(1);
+  Note.Delete(id, (_) => {
+    res.redirect("/");
+  });
+};
 exports.postForm = (req, res, next) => {
   const edit = req.body.noteId;
-  console.log(edit);
   const note = {
     title: req.body.title,
     body: req.body.noteBody,
