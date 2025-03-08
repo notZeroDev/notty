@@ -13,7 +13,7 @@ exports.getNoteDetails = (req, res, next) => {
 exports.getNoteEdit = (req, res, next) => {
   const edit = req.query?.edit == "true";
   console.log("===============>", edit);
-  Note.findNote(req.query.id, function (data) {
+  Note.find(req.query.id, function (data) {
     console.log(data);
     res.render("note-edit.pug", {
       title: `${edit ? "edit" : "create"} note`,
@@ -30,8 +30,8 @@ exports.postForm = (req, res, next) => {
     body: req.body.noteBody,
     id: req.body.noteId,
   };
-  if (edit) Note.updateNote(note);
-  else Note.createNote(note);
+  if (edit) Note.update(note);
+  else Note.create(note);
 
   res.redirect("/");
 };

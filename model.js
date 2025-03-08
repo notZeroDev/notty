@@ -15,13 +15,13 @@ module.exports = class Note {
       } else callback(data);
     });
   }
-  static createNote(note) {
+  static create(note) {
     db.exec(
       `INSERT INTO notes(title, body) VALUES('${note.title}', '${note.body}');`
     );
     console.log(`${note.title} is Created!`);
   }
-  static findNote(id, callback) {
+  static find(id, callback) {
     db.get(`SELECT * FROM notes WHERE id = ${id}`, function (err, data) {
       if (err) {
         console.error(err);
@@ -31,7 +31,7 @@ module.exports = class Note {
       }
     });
   }
-  static updateNote(note) {
+  static update(note) {
     console.log("updated", note);
     db.exec(
       `Update notes SET title = '${note.title}', body = '${note.body}' WHERE id = ${note.id};`
