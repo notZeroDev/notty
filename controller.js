@@ -11,7 +11,12 @@ exports.getNoteDetails = (req, res, next) => {
   res.render("note.pug");
 };
 exports.getNoteEdit = (req, res, next) => {
-  res.render("note-edit.pug");
+  const edit = req.query?.edit == "true";
+  console.log(edit);
+  res.render("note-edit.pug", {
+    title: `${edit ? "edit" : "create"} note`,
+    edit,
+  });
 };
 exports.postForm = (req, res, next) => {
   const note = {

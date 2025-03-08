@@ -16,7 +16,7 @@
   display: grid;
   padding: 1rem 2rem;
   transition: background-color 0.4s;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .note__header {
   margin-top: 1rem;
@@ -31,12 +31,10 @@
 .note__body::-webkit-scrollbar {
   display: none;
 }
-.note__details {
-  color: #56686f;
-}
-.note:hover {
+
+/* .note:hover {
   background-color: #a1e3f9;
-}
+} */
 
 .master {
   background-color: #a1e3f9;
@@ -50,4 +48,24 @@
   border-radius: 15%;
   /* background-color: #000; */
   border: 10px dashed #578fca;
+}
+.note__details {
+  color: #56686f;
+  display: flex;
+  justify-content: space-between;
+}
+.note__details .control span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.note__details .control {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.note__details .control .edit:hover {
+  color: #007bff;
+}
+.note__details .control .delete:hover {
+  color: #da0743e6;
 }
