@@ -21,4 +21,13 @@ module.exports = class Note {
     );
     console.log(`${note.title} Was Created!`);
   }
+  static findNote(id, callback) {
+    db.get(`SELECT * FROM notes WHERE id = ${id}`, function (err, data) {
+      if (err) {
+        console.error(err);
+      } else {
+        callback(data);
+      }
+    });
+  }
 };

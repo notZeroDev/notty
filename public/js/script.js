@@ -18,6 +18,7 @@ const cards = document.querySelectorAll(".card");
 container.addEventListener("click", (e) => {
   const el = e.target.closest("span");
   if (!el) return;
-  route("/note-edit?edit=true");
+  const note = el.closest(".note");
+  route(`/note-edit?edit=true&id=${note.dataset.id}`);
   console.log("we are here");
 });

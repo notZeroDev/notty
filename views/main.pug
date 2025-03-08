@@ -20,7 +20,7 @@ block content
       .note__details
         span.date 21 March, 2025
     each note in notes
-      .note
+      .note(data-id = note.id)
         h3.note__header #{note.title}
         p.note__body #{note.body}
         hr
