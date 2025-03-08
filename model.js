@@ -19,15 +19,23 @@ module.exports = class Note {
     db.exec(
       `INSERT INTO notes(title, body) VALUES('${note.title}', '${note.body}');`
     );
-    console.log(`${note.title} Was Created!`);
+    console.log(`${note.title} is Created!`);
   }
   static findNote(id, callback) {
     db.get(`SELECT * FROM notes WHERE id = ${id}`, function (err, data) {
       if (err) {
         console.error(err);
+        callback(undefined);
       } else {
         callback(data);
       }
     });
+  }
+  static updateNote(note) {
+    console.log("updated", note);
+    db.exec(
+      `Update notes SET title = '${note.title}', body = '${note.body}' WHERE id = ${note.id};`
+    );
+    console.log(`${note.title} is Updated!`);
   }
 };

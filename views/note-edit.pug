@@ -9,4 +9,5 @@ block content
     .field(class="note-body")
       label(for="noteBody") Note Body
       textarea#body(name="noteBody") #{edit ? note.body : ''}
+      input(type="hidden", name="noteId", value=`${edit ? note.id : ''}`)
     button(type="submit") #{edit ? "Edit" : "Create"}
