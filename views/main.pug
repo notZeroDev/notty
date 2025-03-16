@@ -16,14 +16,12 @@ block content
         | adipisicing elit. Error, accusantium quos sint maxime mollitia,
         | sapiente ipsam doloribus qui eligendi distinctio ea officia a voluptas
         | eius quas dolorem repudiandae similique atque?
-      hr
       .note__details
         span.date 21 March, 2025
     each note in notes
       .note(data-id = note.id)
         h3.note__header #{note.title}
         p.note__body #{note.body}
-        hr
         .note__details
           span.date 21 March, 2025
           div.control

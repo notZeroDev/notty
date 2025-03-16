@@ -30,10 +30,11 @@
   display: grid;
   padding: 1rem 2rem;
   transition: background-color 0.4s;
+  grid-template-rows: 1fr 3fr 1fr;
   /* cursor: pointer; */
 }
 .note__header {
-  margin-top: 1rem;
+  margin: 1rem 0;
   font-size: 2rem;
 }
 .note__body {
@@ -67,6 +68,7 @@
   color: #56686f;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .note__details .control span {
   cursor: pointer;
