@@ -1,5 +1,5 @@
 .container {
-  width: 80%;
+  width: 90%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -7,6 +7,20 @@
   justify-content: left;
   padding: 1rem;
   gap: 1rem;
+  box-sizing: border-box;
+}
+@media (max-width: 1300px) {
+  .container {
+    min-width: 60%;
+    margin: 0 4rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    max-width: 80%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .note {
   background-color: #ddd;
