@@ -9,12 +9,6 @@ createCard.addEventListener("click", (e) => {
   route("/note-edit");
 });
 const cards = document.querySelectorAll(".card");
-// container.addEventListener("click", (e) => {
-//   const el = e.target;
-//   if (el.closest(".master") || !el.closest(".note")) return;
-//   console.log("note were clicked");
-//   route("/note");
-// });
 container.addEventListener("click", (e) => {
   const el = e.target.closest("span");
   if (!el) return;

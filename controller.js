@@ -15,7 +15,9 @@ exports.getLandingPage = (req, res, next) => {
   });
 };
 exports.getNoteDetails = (req, res, next) => {
-  res.render("note.pug");
+  Note.find(req.query.id, (note) => {
+    res.render("note.pug", { note });
+  });
 };
 exports.getNoteEdit = (req, res, next) => {
   const edit = req.query?.edit == "true";

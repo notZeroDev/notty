@@ -31,7 +31,6 @@
   padding: 1rem 2rem;
   transition: background-color 0.4s;
   grid-template-rows: 1fr 3fr 1fr;
-  /* cursor: pointer; */
 }
 .note__header {
   margin: 1rem 0;
@@ -46,10 +45,6 @@
 .note__body::-webkit-scrollbar {
   display: none;
 }
-
-/* .note:hover {
-  background-color: #a1e3f9;
-} */
 
 .master {
   background-color: #a1e3f9;
