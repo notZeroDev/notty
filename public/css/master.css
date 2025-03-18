@@ -3,6 +3,7 @@
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
+  outline: none;
 }
 body {
   background-color: #3674b5;
