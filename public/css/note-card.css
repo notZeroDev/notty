@@ -47,17 +47,28 @@
 }
 
 .master {
-  background-color: #a1e3f9;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  color: #578fca;
+  cursor: pointer;
+}
+.master:hover {
+  background-color: #a1e3f9;
 }
 .master .circle {
-  height: 15rem;
-  width: 15rem;
-  border-radius: 15%;
-  /* background-color: #000; */
-  border: 10px dashed #578fca;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 5px dashed #578fca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #578fca;
 }
 .note__details {
   color: #56686f;

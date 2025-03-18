@@ -4,8 +4,8 @@ block links
 block content
   form(action="/note-edit", method="POST")
     .field 
-      input#title(type="text", name="title",placeholder="Title" value=`${edit ? note.title : ''}`,onfocus="this.value = this.value;", autofocus)
+      input#title(type="text", name="title",placeholder="Title" value=`${edit ? note.title : ''}`,required, autofocus)
     .field(class="note-body")
-      textarea#body(name="noteBody", placeholder="Input Some Notes To Keep...") #{edit ? note.body : ''}
+      textarea#body(name="noteBody", placeholder="Write Some Notes To Keep...", required) #{edit ? note.body : ''}
       input(type="hidden", name="noteId", value=`${edit ? note.id : ''}`)
     button(type="submit") #{edit ? "Edit" : "Create"}
