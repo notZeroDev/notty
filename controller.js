@@ -3,6 +3,14 @@ exports.getLandingPage = (req, res, next) => {
   let notes;
   Note.fetchAll((data) => {
     notes = data;
+    notes.forEach((note) => {
+      note.date = new Date(note["created_at"]).toLocaleString("default", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+    });
+    console.log(notes);
     res.render("main.pug", { title: "Notty", notes });
   });
 };

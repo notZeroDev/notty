@@ -2,9 +2,14 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("notes.db");
 //* example code
 // db.exec(
-//   "CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, body TEXT NOT NULL);"
+//   "CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, body TEXT NOT NULL, created_at DATE DEFAULT (CURRENT_DATE) );"
 // );
 // db.exec("DELETE FROM notes WHERE id = 1;");
+// db.all("SELECT * FROM notes", function (err, data) {
+//   if (err) {
+//     console.error(err);
+//   } else console.log(data);
+// });
 module.exports = class Note {
   static fetchAll(callback) {
     db.all("SELECT * FROM notes", function (err, data) {
@@ -15,7 +20,9 @@ module.exports = class Note {
   }
   static create(note) {
     db.exec(
-      `INSERT INTO notes(title, body) VALUES('${note.title}', '${note.body}');`
+      `INSERT INTO notes(id, title, body) VALUES(${Date.now()},'${
+        note.title
+      }', '${note.body}');`
     );
     console.log(`${note.title} is Created!`);
   }
